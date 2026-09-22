@@ -1,0 +1,6 @@
+.DS_Store
+~$*
+*.tmp
+
+# Unfinalized internal material stays local and never gets published.
+private/

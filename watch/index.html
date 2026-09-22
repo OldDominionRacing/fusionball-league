@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watch FBL — Fusionball League live stream</title>
+<meta name="description" content="watchFBL.com: the live stream and archive of Fusionball League games.">
+<meta property="og:title" content="Watch FBL">
+<meta property="og:description" content="Fusionball League, live from Ragain Field, Colorado Springs.">
+<meta property="og:image" content="https://fusionballleague.com/assets/shield-640.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/favicon-96.png" alt=""><span>Fusionball League</span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <ul>
+      <li><a href="/#game">The Game</a></li>
+      <li><a href="/rules/">Rules</a></li>
+      <li><a href="/charter/">Charter</a></li>
+      <li><a href="/teams/">Field a Team</a></li>
+      <li><a href="/#invitational">2027 Invitational</a></li>
+      <li><a class="watch" href="/watch/">Watch FBL</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="section dark on-dark" style="padding-top:40px">
+  <div class="wrap">
+    <div class="kicker">watchFBL.com</div>
+    <h1>Watch FBL</h1>
+    <p style="max-width:40em;color:#e6eaf3">Live from Ragain Field, Colorado Springs. Every game day of the 2027 Invitational is filmed and streamed here; full games are archived after each Saturday.</p>
+
+    <div class="player" id="player">
+      <div class="placeholder" id="placeholder">
+        <img src="/assets/shield-640.png" alt="">
+        <div class="kicker">Stream offline</div>
+        <p style="max-width:32em;margin:6px 0 0;color:#dfe4ef">The first public games are in the 2027 season. Subscribe on YouTube to get notified when we go live.</p>
+      </div>
+    </div>
+
+    <div class="btn-row" style="margin-top:24px">
+      <a class="btn btn-red" id="yt-link" href="https://www.youtube.com/" target="_blank" rel="noopener">Subscribe on YouTube</a>
+      <a class="btn btn-ghost" href="/#invitational">About the Invitational</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap cols">
+    <div>
+      <h3>Game days</h3>
+      <p class="muted">Four consecutive Saturdays in the 2027 season, on dates set with City Parks. Games run from 3:00 to about 9:00 PM Mountain time. Dates will be posted here and on the league site as soon as they are confirmed.</p>
+      <table>
+        <thead><tr><th>Day</th><th>What</th><th>Date</th></tr></thead>
+        <tbody>
+          <tr><td>Saturday 1</td><td>Pool play</td><td>TBA</td></tr>
+          <tr><td>Saturday 2</td><td>Pool play</td><td>TBA</td></tr>
+          <tr><td>Saturday 3</td><td>Pool play</td><td>TBA</td></tr>
+          <tr><td>Saturday 4</td><td>Championship</td><td>TBA</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3>How to read a game</h3>
+      <ul class="ticks">
+        <li><strong>6</strong> Touchdown. Then watch the point-after: it starts instantly, and the scorer can dunk it for 3, reset for 3, or take the 1.</li>
+        <li><strong>3</strong> Target. A throw through the ring on the crossbar, from anywhere, any time.</li>
+        <li><strong>1</strong> Uprights. Thrown or kicked, any time.</li>
+        <li>No downs. When the ball changes hands, the game just turns around.</li>
+        <li>80 minutes on a fixed clock. The scoreboard never lies about how long is left.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Fusionball League</h4>
+      <p>Fusionball League LLC sanctions the sport. The 2027 Invitational is produced by Old Dominion Racing, Colorado Springs.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="/rules/">Rulebook</a></li>
+        <li><a href="/charter/">Charter</a></li>
+        <li><a href="/teams/">Field a team</a></li>
+        <li><a href="/watch/">Watch</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Domains</h4>
+      <ul>
+        <li><a href="https://fusionballleague.com/">FusionballLeague.com</a> — the league</li>
+        <li><a href="https://watchfbl.com/">watchFBL.com</a> — the stream</li>
+      </ul>
+    </div>
+    <div class="legal">Fusionball™ and the shield are trademarks of Epinath, LLC.</div>
+  </div>
+</footer>
+
+<script>
+  // ---- Stream configuration -------------------------------------------
+  // Set CHANNEL to the league's YouTube channel URL and, when a stream or
+  // archived game should play here, set VIDEO_ID to the YouTube video id
+  // (the part after "v=" in a YouTube link). Leave VIDEO_ID empty to show
+  // the offline card.
+  var CHANNEL = 'https://www.youtube.com/';   // TODO: replace with the FBL channel URL
+  var VIDEO_ID = '';                           // e.g. 'dQw4w9WgXcQ'
+  // -----------------------------------------------------------------------
+  document.getElementById('yt-link').href = CHANNEL;
+  if (VIDEO_ID) {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + VIDEO_ID + '?rel=0';
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.allowFullscreen = true;
+    f.title = 'Fusionball League stream';
+    var p = document.getElementById('player');
+    p.innerHTML = '';
+    p.appendChild(f);
+  }
+</script>
+<script src="/assets/site.js"></script>
+</body>
+</html>
