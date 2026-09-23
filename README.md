@@ -38,7 +38,7 @@ Edit a markdown file in `docs/` and the rules and charter pages update on the ne
 - `A` records for the apex `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
 - `CNAME` for `www` → `olddominionracing.github.io`
 
-**watchFBL.com.** GitHub Pages serves one custom domain per repository, so point watchFBL.com at the watch page with a registrar-level forward (301 redirect) from `watchfbl.com` and `www.watchfbl.com` to `https://fusionballleague.com/watch/`. If you would rather it resolve directly to YouTube, forward it to the channel URL instead; the README line above ("points at YouTube") is satisfied either way.
+**watchFBL.com.** GitHub Pages serves one custom domain per repository, so point watchFBL.com at the watch page with a registrar-level forward (301 redirect) from `watchfbl.com` and `www.watchfbl.com` to `https://fusionballleague.com/watch/`. If you would rather it resolve directly to YouTube, forward it to the channel, https://www.youtube.com/@fusionball-w9k7j, instead.
 
 **Stream setup.** In `watch/index.html`, set `CHANNEL` to the league's YouTube channel URL and `VIDEO_ID` to the id of the live stream or archived game to embed. Leave `VIDEO_ID` empty to show the offline card.
 
